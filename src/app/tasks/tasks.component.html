@@ -1,0 +1,12 @@
+<!-- Iterating through each of the task and on dbClick it will change the task reminder -->
+<div *ngFor="let task of assignedTask" (dblclick)="setTaskReminder($event, task._id)" class="w-full border rounded-lg border-l-8 h-20 mb-5 hover:-translate-y-2 transition-transform duration-200 ease-linear bg-[rgba(255,255,255,0.93)]" [ngClass]="{'border-l-red-500': !task.TaskStatus, 'border-l-green-500' : task.TaskStatus} ">
+    <div class="w-11/12 h-full mx-auto flex flex-row">
+        <div class="w-10/12 flex-col mt-1">
+            <p class="text-lg font-bold">{{task.TaskName}}</p>
+            <p class="">{{task.TaskDescription}}</p>
+        </div>
+        <div class="w-1/6 flex items-center justify-around">
+            <button (click)="removeTasks(task._id)" class="text-xl font-bold hover:text-red-500 transition-all duration-200 ease-linear">X</button>
+        </div>  
+    </div>
+</div>

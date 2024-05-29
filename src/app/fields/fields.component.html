@@ -1,0 +1,19 @@
+<!-- using condition if of angular to show and hide task -->
+
+<div *ngIf="toggleFieldVisibility" class="flex flex-col gap-4">
+    <div class="w-full flex flex-col">
+        <label class="text-lg mb-2 font-semibold">Task Title</label>
+        <input (change)="setTaskTitle($event)" class="border-2 border-black rounded-lg p-2" type="text" placeholder="Enter Title"/>
+    </div>
+    <div class="w-full flex flex-col">
+        <label class="text-lg mb-2 font-semibold">Task Description</label>
+        <input (change)="setTaskDescription($event)" class="border-2 border-black rounded-lg p-2" type="text" placeholder="Enter Description"/>
+    </div>
+    <div class="inline-flex gap-3">
+        <input (change)="setTaskReminder($event)" type="checkbox">
+        <label  class="text-lg font-semibold">Set Reminder</label>
+    </div>
+    <div class="w-full text-center">
+        <button (click)="handleSubmit()" class="bg-[rgba(0,0,0,0.75)] rounded-lg text-white w-24 h-10 hover:w-full hover:bg-black transition-all duration-500 ease-linear">Save task</button>
+    </div>
+</div>
